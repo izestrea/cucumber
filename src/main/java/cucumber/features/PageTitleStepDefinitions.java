@@ -16,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PageTitleStepDefinitions {
 
     WebDriver driver = null;
-
+/* Old code, that was improve
     @Given("^I am on Ubuntu website$")
     public void iAmOnUbuntuWebsite() throws Throwable {
         System.setProperty("webdriver.chrome.driver","D:\\sk_down\\chromedriver.exe");
@@ -56,6 +56,28 @@ public class PageTitleStepDefinitions {
 
     @Then("^I close the browser$")
     public void iCloseTheBrowser() throws Throwable {
+        driver.close();
+    }
+*/
+    @Given("^I am on Ubuntu website$")
+    public void I_am_on_Ubuntu_website() throws Throwable {
+        System.setProperty("webdriver.chrome.driver","D:\\sk_down\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.navigate().to("http://www.ubuntu.ro/");
+    }
+
+    @When("^I navigate to \"([^\"]*)\"$")
+    public void I_navigate_to(String link) throws Throwable {
+        driver.findElement(By.id(link)).click();
+    }
+
+    @Then("^I check page title is \"([^\"]*)\"$")
+    public void I_check_page_title_is(String title) throws Throwable {
+        Assert.assertTrue(driver.getTitle().contains(title));
+    }
+
+    @And("^I close the browser$")
+    public void I_close_the_browser() throws Throwable {
         driver.close();
     }
 }
