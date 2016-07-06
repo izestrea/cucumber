@@ -57,46 +57,4 @@ public class StepDefinitions {
     public void checkOnContactConfirmationPage() throws Throwable {
         Assert.assertTrue("Not on contact confirmation page", driver.getTitle().equals("Ubuntu România | Contacte"));
     }
-
-
-    @Given("^I am on Ubuntu website$")
-    public void iAmOnUbuntuWebsite() throws Throwable {
-
-    }
-
-    @When("^I navigate to Descopera Ubuntu$")
-    public void I_navigate_to_Descopera_Ubuntu() throws Throwable {
-
-    }
-
-    @Then("^I check page title is Descopera Ubuntu$")
-    public void I_check_page_title_is_Descopera_Ubuntu() throws Throwable {
-
-    }
-
-    @Then("^I close the browser$")
-    public void I_close_the_browser() throws Throwable {
-
-    }
-
-    @When("^I navigate to Obtine$")
-    public void I_navigate_to_Obtine() throws Throwable {
-
-    }
-
-    @Then("^I check page title is Obtine$")
-    public void I_check_page_title_is_Obtine() throws Throwable {
-
-    }
-
-    @When("^I navigate to Stiri$")
-    public void I_navigate_to_Stiri() throws Throwable {
-
-    }
-
-    @Then("^I check page title is Stiri$")
-    public void I_check_page_title_is_Stiri() throws Throwable {
-
-    }
-
 }
