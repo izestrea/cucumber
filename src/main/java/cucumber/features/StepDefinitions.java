@@ -35,7 +35,7 @@ public class StepDefinitions {
 
     @Given("^I am on my zoo website$")
     public void shouldNavigateTooZooSite() throws Throwable {
-        System.setProperty("webdriver.chrome.driver","D:\\sk_down\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","D:\\apps\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.navigate().to("http://ubuntu.ro/");
     }

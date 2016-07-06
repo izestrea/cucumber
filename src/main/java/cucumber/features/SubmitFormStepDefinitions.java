@@ -22,7 +22,7 @@ public class SubmitFormStepDefinitions {
 
     @Given("^I am on the Ubuntu site$")
     public void iAmOnTheUbuntuSite() throws Throwable {
-        System.setProperty("webdriver.chrome.driver","D:\\sk_down\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","D:\\apps\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.navigate().to("http://www.ubuntu.ro/");
     }

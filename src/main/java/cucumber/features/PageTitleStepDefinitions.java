@@ -16,15 +16,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PageTitleStepDefinitions {
 
     WebDriver driver = null;
-/* Old code, that was improve
+//Old code, that was improve
     @Given("^I am on Ubuntu website$")
     public void iAmOnUbuntuWebsite() throws Throwable {
-        System.setProperty("webdriver.chrome.driver","D:\\sk_down\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","D:\\apps\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.navigate().to("http://www.ubuntu.ro/");
     }
-
-    @When("^I navigate to Descopera Ubuntu$")
+// code improved by scenario outline data table
+   /* @When("^I navigate to Descopera Ubuntu$")
     public void iNavigateToDescoperaUbuntu() throws Throwable {
         driver.findElement(By.id("menu-item-24")).click();
     }
@@ -52,14 +52,23 @@ public class PageTitleStepDefinitions {
     @Then("^I check page title is Stiri$")
     public void iCheckPageTitleIsStiri() throws Throwable {
         Assert.assertTrue(driver.getTitle().contains("Ubuntu România | Știri"));
-    }
+    } */
 
     @Then("^I close the browser$")
     public void iCloseTheBrowser() throws Throwable {
         driver.close();
     }
-*/
-    @Given("^I am on Ubuntu website$")
+    @When("^I navigate to ([^\"]*)$")
+    public void iNavigateToObtine(String link) throws Throwable {
+        driver.findElement(By.id(link)).click();
+    }
+    @Then("^I check page title is ([^\"]*)$")
+    public void iCheckPageTitleIsObtine(String title) throws Throwable {
+        Assert.assertTrue(driver.getTitle().contains(title));
+    }
+
+//    code for testing scenario with parameters
+    /*@Given("^I am on Ubuntu website$")
     public void I_am_on_Ubuntu_website() throws Throwable {
         System.setProperty("webdriver.chrome.driver","D:\\sk_down\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -79,5 +88,5 @@ public class PageTitleStepDefinitions {
     @And("^I close the browser$")
     public void I_close_the_browser() throws Throwable {
         driver.close();
-    }
+    }*/
 }
