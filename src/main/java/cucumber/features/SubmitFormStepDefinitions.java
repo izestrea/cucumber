@@ -41,9 +41,9 @@ public class SubmitFormStepDefinitions {
 //        test if list is populated
         System.out.println(data.get(1).get(1));
 
-        driver.findElement(By.name("22-nume")).sendKeys("John Doe");
-        driver.findElement(By.name("22-email")).sendKeys("john@doe.com");
-        driver.findElement(By.name("22-pagin%c4%83-web")).sendKeys("www.johndoe.com");
+        driver.findElement(By.name("22-nume")).sendKeys(data.get(1).get(1));
+        driver.findElement(By.name("22-email")).sendKeys(data.get(2).get(1));
+        driver.findElement(By.name("22-pagin%c4%83-web")).sendKeys(data.get(3).get(1));
         driver.findElement(By.className("pushbutton-wide")).click();
     }
 
