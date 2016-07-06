@@ -1,5 +1,6 @@
 package cucumber.features;
 
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -9,6 +10,8 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 /**
  * Created on 0006, July, 6.
@@ -30,7 +33,14 @@ public class SubmitFormStepDefinitions {
     }
 
     @And("^I submit the form with valid data$")
-    public void iSubmitTheFormWithValidData() throws Throwable {
+    public void iSubmitTheFormWithValidData(DataTable table) throws Throwable {
+// test to output datatable
+//        System.out.println(table);
+
+        List<List<String>> data = table.raw();
+//        test if list is populated
+        System.out.println(data.get(1).get(1));
+
         driver.findElement(By.name("22-nume")).sendKeys("John Doe");
         driver.findElement(By.name("22-email")).sendKeys("john@doe.com");
         driver.findElement(By.name("22-pagin%c4%83-web")).sendKeys("www.johndoe.com");
