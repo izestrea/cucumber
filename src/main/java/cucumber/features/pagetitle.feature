@@ -20,5 +20,5 @@ Feature: Check the page title
     Examples:
       | Link         | Title            |
       | menu-item-24 | Descoperă Ubuntu |
-      | menu-item-35 | Obține           |
+    #  | menu-item-35 | Obține           |
       | menu-item-31 | Ştiri            |

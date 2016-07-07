@@ -53,20 +53,18 @@ public class PageTitleStepDefinitions {
     public void iCheckPageTitleIsStiri() throws Throwable {
         Assert.assertTrue(driver.getTitle().contains("Ubuntu România | Știri"));
     } */
-
+    @When("^I navigate to ([^\"]*)$")
+    public void iNavigateToLink(String link) throws Throwable {
+        driver.findElement(By.id(link)).click();
+    }
+    @Then("^I check page title is ([^\"]*)$")
+    public void iCheckPageTitleIsTitle(String title) throws Throwable {
+        Assert.assertTrue(driver.getTitle().contains(title));
+    }
     @Then("^I close the browser$")
     public void iCloseTheBrowser() throws Throwable {
         driver.close();
     }
-    @When("^I navigate to ([^\"]*)$")
-    public void iNavigateToObtine(String link) throws Throwable {
-        driver.findElement(By.id(link)).click();
-    }
-    @Then("^I check page title is ([^\"]*)$")
-    public void iCheckPageTitleIsObtine(String title) throws Throwable {
-        Assert.assertTrue(driver.getTitle().contains(title));
-    }
-
 //    code for testing scenario with parameters
     /*@Given("^I am on Ubuntu website$")
     public void I_am_on_Ubuntu_website() throws Throwable {
