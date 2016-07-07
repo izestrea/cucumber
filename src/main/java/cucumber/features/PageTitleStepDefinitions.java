@@ -21,10 +21,19 @@ public class PageTitleStepDefinitions {
 
     @Before
     public void testSetUp() {
+//        System.setProperty("webdriver.chrome.driver","D:\\apps\\chromedriver.exe");
+//        driver = new ChromeDriver();
+    }
+    @After
+    public void testShutDownWeb(){
+//        driver.quit();
+    }
+    @Before("@web")
+    public void testSetUpWeb() {
         System.setProperty("webdriver.chrome.driver","D:\\apps\\chromedriver.exe");
         driver = new ChromeDriver();
     }
-    @After
+    @After("@web")
     public void testShutDown(){
         driver.quit();
     }

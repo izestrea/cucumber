@@ -11,7 +11,7 @@ Feature: Check the page title
 #    When I navigate to "menu-item-35"
 #    Then I check page title is "Ubuntu România | Obține"
 #    And I close the browser
-
+  @web
   Scenario Outline: Check page title for Stiri page
     Given I am on Ubuntu website
     When I navigate to <Link>
