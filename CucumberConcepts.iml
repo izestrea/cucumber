@@ -73,5 +73,7 @@
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
     <orderEntry type="library" name="Maven: info.cukes:cucumber-junit:1.1.5" level="project" />
     <orderEntry type="library" name="Maven: info.cukes:cucumber-java:1.1.5" level="project" />
+    <orderEntry type="library" name="Maven: info.cukes:cucumber-picocontainer:1.1.5" level="project" />
+    <orderEntry type="library" name="Maven: org.picocontainer:picocontainer:2.14.3" level="project" />
   </component>
 </module>
