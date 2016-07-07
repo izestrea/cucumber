@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        format = {"pretty", "html:target/html/"},
+        format = {"pretty", "json:target/json/output.json"},
         features = "src/test/resource"
 )
 public class RunnerTest {
