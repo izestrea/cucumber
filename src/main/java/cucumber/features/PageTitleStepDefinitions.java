@@ -1,6 +1,8 @@
 package cucumber.features;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,11 +18,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PageTitleStepDefinitions {
 
     WebDriver driver = null;
+
+    @Before
+    public void testSetUp() {
+        System.setProperty("webdriver.chrome.driver","D:\\apps\\chromedriver.exe");
+        driver = new ChromeDriver();
+    }
+    @After
+    public void testShutDown(){
+        driver.quit();
+    }
 //Old code, that was improve
     @Given("^I am on Ubuntu website$")
     public void iAmOnUbuntuWebsite() throws Throwable {
-        System.setProperty("webdriver.chrome.driver","D:\\apps\\chromedriver.exe");
-        driver = new ChromeDriver();
         driver.navigate().to("http://www.ubuntu.ro/");
     }
 // code improved by scenario outline data table
