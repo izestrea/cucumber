@@ -17,4 +17,8 @@ public class AbstractPage {
         driver.navigate().to("http://www.thetestroom.com/webapp/");
         return new LandingPage(driver);
     }
+
+    public void closeDriver(){
+        driver.quit();
+    }
 }
