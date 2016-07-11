@@ -3,6 +3,7 @@ package com.cucumber.concepts.CucumberConcepts;
 import com.cucumber.concepts.pageObject.ContactConfirmPage;
 import com.cucumber.concepts.pageObject.ContactPage;
 import com.cucumber.concepts.pageObject.LandingPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -63,5 +64,14 @@ public class StepDefinition extends AbstractPageStepDef {
     @Then("^I close browser$")
     public void I_close_browser() throws Throwable {
         contactConfirmPage.closeDriver();
+    }
+
+    @And("^I populate the entire form$")
+    public void iPopulateTheEntireForm() throws Throwable {
+       contactPage
+               .setNameField("name")
+               .setAddressField("address")
+               .setPostcodeField("postcode")
+               .setEmailField("mail");
     }
 }
